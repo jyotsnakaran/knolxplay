@@ -1,0 +1,33 @@
+@* loginForm Template File *@
+@(loginForm:Form[(String,String)])(implicit flash:Flash)
+@import helper._
+@import helper.twitterBootstrap._
+
+<!-- login form rendered on main -->
+@main("login"){
+	<div class="container-fluid" style="margin-top: 6%">
+	<div class="row">
+	<div class="col-md-4 col-sm-6">
+	@leftPanel("")
+	</div>
+	<div class="col-md-8 col-sm-6">
+<div class="panel panel-primary" style="width:70%; margin-left: 10% ; ">
+	<div class="panel-heading">Enter Login Details</div>
+	<div class="panel-body" style="padding-left: 20%"> 
+	
+	@helper.form(action = routes.Application.authenticate()) {
+	
+	<div style="margin-left: 100px;">
+		@helper.inputText(loginForm("email"),'_label->"email")
+		@helper.inputPassword(loginForm("password"),'_label->"password")
+
+		<input type="submit" class="btn btn-success btn-md" value="LOGIN"></button>
+		<a href="@routes.Application.index()" class="btn btn-success btn-md">Cancel</a>
+	</div>
+	}
+	</div>
+	</div>
+	</div>
+</div>
+</div>
+}

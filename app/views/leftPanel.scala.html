@@ -1,0 +1,21 @@
+@* leftPanel Template File *@ 
+@(param:Any)(implicit flash : Flash)
+
+<!-- panel on user profile-->
+<div class="panel panel-primary">
+	<div class="panel-heading">MAIN MENU</div>
+	<div class="panel-body">
+		<div class="list-group">
+			<a href= @routes.Application.authenticate()" class="list-group-item">Home</a>
+			<a href= @routes.Application.authenticate()" class="list-group-item">View Profile</a>
+			<a href="#" class="list-group-item">Update Profile</a> <a href="#"
+				class="list-group-item">Gallery</a>
+		</div>
+	</div>
+</div>
+<div class="panel panel-primary">
+	<div class="panel-heading">WHOS ONLINE...</div>
+	<div class="panel-body">
+		<i>12 are online right now</i>
+	</div>
+</div>

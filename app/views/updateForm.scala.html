@@ -1,0 +1,35 @@
+@* updateForm Template File *@ 
+@(id:Int,userForm:Form[Knol])(implicit flash:Flash) 
+@import helper._ 
+@import helper.twitterBootstrap._
+
+<!--form for updation, rendered in contents of main-->
+@main("index"){
+	<div class="container-fluid" style="margin-top: 6%">
+	<div class="row">
+	<div class="col-md-4 col-sm-6">
+	@leftPanel("")
+	</div>
+	<div class="col-md-8 col-sm-6">
+<div class="panel panel-primary panel-two"
+	style="width:70%; margin-left: 10% ;">
+	<div class="panel-heading">Edit the user details..</div>
+	<div class="panel-body" style="padding-left: 20% ; ">
+		@helper.form(action = routes.Application.editDetail(id)) {
+		<div style="margin-left: 100px;">
+			@helper.inputText(userForm("name"),'_label->"User Name")
+			@helper.inputText(userForm("address"),'_label->"address")
+			@helper.inputText(userForm("company"),'_label->"company")
+			@helper.inputText(userForm("email"),'_label->"email")
+			@helper.inputPassword(userForm("password"),'_label->"password")
+			@helper.inputText(userForm("mobile"),'_label->"mobile")
+			<button type="submit" class="btn btn-success btn-md">Save Change</button>
+			<a href= "@routes.Application.index()" class="btn btn-success btn-md">Cancel</a>
+		</div>
+		}
+	</div>
+</div>
+</div>
+</div>
+</div>
+}

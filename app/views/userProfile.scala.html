@@ -1,0 +1,60 @@
+@* userProfile Template File *@ 
+@(user:Knol)(implicit flash:Flash)
+
+<!--user details shown on user profile-->
+@main("profile"){
+<div class="container-fluid" style="margin-top: 6%">
+	<div class="row">
+		<div class="col-md-4 col-sm-6">@leftPanel("")</div>
+		<div class="col-md-8 col-sm-6">
+			<h3>Welcome @user.name !!!</h3>
+			<div class="panel panel-primary" style="width:70%; margin-left: 10% ; ">
+				<div class="panel-heading">Your Profile</div>
+				<div class="panel-body" style="padding-left: 20% ; ">
+
+					<table class="table table-striped">
+						<tbody>
+							<tr>
+								<th>Name</th>
+								<td>@user.name</td>
+							</tr>
+							<tr>
+								<th>Address</th>
+								<td>@user.address</td>
+							</tr>
+							<tr>
+								<th>Email</th>
+								<td>@user.email</td>
+							</tr>
+							<tr>
+								<th>Company</th>
+								<td>@user.company</td>
+							</tr>
+							<tr>
+								<th>Phone</th>
+								<td>@user.mobile</td>
+							</tr>
+							<tr>
+								<th>UserType</th>
+								<td>@user.userType</td>
+							</tr>
+							<tr>
+								<th>Created On</th>
+								<td>@user.created</td>
+							</tr>
+							<tr>
+								<th>Updated On</th>
+								<td>@user.updated</td>
+							</tr>
+						</tbody>
+					</table>
+
+
+					<a href= "@routes.Application.editForm(user.id)"
+						class="btn btn-success btn-lg">Update Profile</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+}

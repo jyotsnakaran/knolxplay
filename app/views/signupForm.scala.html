@@ -1,0 +1,16 @@
+@* signupForm Template File *@
+@(knol:Form[Knol])(implicit flash: Flash)
+
+<!-- sign up form rendered at content of main-->
+@main("signup"){
+		<div class="container-fluid" style="margin-top: 6%">
+	<div class="row">
+	<div class="col-md-4 col-sm-6">
+	@leftPanel("")
+	</div>
+	<div class="col-md-8 col-sm-6">
+			@form(knol)
+		</div>
+	</div> 
+	</div>
+}
